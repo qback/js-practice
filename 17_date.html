@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="birthDay" style="width: 300px" placeholder="Введите дату в формате '2014-12-31'">
+	<p>Осталось <span id="days"></span> дней</p>
+	<button id="example">Примерчик 2014-05-06</button>
+	<hr>
+	<p>До конца дня осталось <span id="sec"></span> секунд</p>
+	<hr>
+	<div class="exam">
+		<select name="week" id="weekDays">
+			<option value="1">Пн</option>
+			<option value="2">Вт</option>
+			<option value="3">Ср</option>
+			<option value="4">Чт</option>
+			<option value="5">Пт</option>
+			<option value="6">Сб</option>
+			<option value="0">Вс</option>
+		</select>
+		<p>Сегодня <mark id="today"></mark>. До след. <b id="next">дня недели</b> - <b id="value">число</b> дн.</p>
+	</div>
+	
+	<script src="17_date.js"></script>
+</body>
+</html>

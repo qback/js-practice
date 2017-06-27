@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+	 crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+	 crossorigin="anonymous"></script>
+	<style>
+		
+	</style>
+</head>
+
+<body>
+	<div class="container">
+
+		<form lpformnum="1" id="form1">
+			<div class="form-group">
+				<label for="formGroupExampleInput">Example label</label>
+				<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" value="7">
+			</div>
+			<div class="form-group">
+				<label for="formGroupExampleInput2">Another label</label>
+				<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input" value="5">
+			</div>
+			<button class="btn btn-success" type="button">Calculate inputs sum</button>
+			<p>Sum: <span class="result"></span></p>
+		</form>
+
+		<hr>
+
+		<div class="forms">
+			<form lpformnum="1" id="form2">
+				<div class="form-group">
+					<label for="formGroupExampleInput">Example label</label>
+					<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" value="7">
+				</div>
+				<div class="form-group">
+					<label for="formGroupExampleInput2">Another label</label>
+					<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input" value="5">
+				</div>
+			</form>
+			<form lpformnum="1" id="form3">
+				<div class="form-group">
+					<label for="formGroupExampleInput">Example label</label>
+					<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" value="7">
+				</div>
+				<div class="form-group">
+					<label for="formGroupExampleInput2">Another label</label>
+					<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input" value="5">
+				</div>
+			</form>
+			<button class="btn btn-success" type="button">Calculate forms inputs sum</button>
+			<p>Sum: <span class="result"></span></p>
+		</div>
+		<hr>
+		<div class="select">
+			<select class="custom-select">
+				<option value="1">One</option>
+				<option value="2">Two</option>
+				<option value="3">Three</option>
+			</select>
+			<input type="text" id="formGroupExampleInput" placeholder="Example input">
+		</div>
+		<hr>
+		<div class="manual-select">
+			<select class="custom-select">
+				<option value="1">One</option>
+				<option value="2">Two</option>
+				<option value="3">Three</option>
+			</select>
+			<input type="text" id="formGroupExampleInput" placeholder="Example input">
+			<button class="btn btn-success" type="button">Выбрать опцию</button>
+		</div>
+		<hr>
+		<div class="double-select">
+			<select class="custom-select countries">
+			</select>
+			<select class="custom-select cities">
+			</select>
+		</div>
+	</div>
+
+	<script src="/23_forms.js"></script>
+</body>
+
+</html>

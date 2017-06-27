@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>События через атрибуты</h2>
+		<hr>
+		<button onclick="console.log('click')">Нажми на меня, загляни в log</button>
+		<hr>
+		<span class="well well-sm" onmouseover="console.log('mouseover')">Лог по наведению (mouseover)</span>
+		<hr>
+		<button class="btn" ondblclick="console.log('dblclick')">Двойной щелчок - загляни в лог</button>
+		<hr>
+		<span class="well well-sm" onmouseout="console.log('onmouseout')">Наведи на меня мышь - а потом убери!</span>
+		<hr>
+		<h2>Метод getElementById и работа с атрибутами</h2>
+		<input type="text" id="input1">
+		<button id="button1">Лог соседнего инпута</button>
+		<hr>
+		<input type="text" id="input2" value="text">
+		<button id="button2">Изменить текст</button>
+		<hr>
+		<figure>
+			<img src="http://theory.phphtml.net/exercises/javascript/dom/osnovy-raboty-s-dom-v-javascript/2/3/1.jpg" alt="sza" id="img3">
+		</figure>
+		<button id="button3">Изменить картинку</button>
+		<hr>
+		<h2>Работа с this</h2>
+		<form lpformnum="1">
+			<div class="form-group">
+				<label for="input4">Example label</label>
+				<input type="text" class="form-control" id="input4" value="Нажми и посмотри в консоль">
+			</div>
+			<div class="form-group">
+				<label for="input5">Another label</label>
+				<input type="text" class="form-control" id="input5" value="Текст изменится">
+			</div>
+			<div class="form-group">
+				<label for="input6">Another label</label>
+				<input type="text" class="form-control" id="input6" value="Вход и выход">
+			</div>
+			<div class="form-group">
+				<label for="input7">Another label</label>
+				<input type="text" class="form-control" id="input7" value="Нажать по мне можно лишь раз">
+			</div>
+		</form>
+		<hr>
+		<figure id="figure1">
+			<img src="http://theory.phphtml.net/exercises/javascript/dom/osnovy-raboty-s-dom-v-javascript/2/3/1.jpg" alt="sss">
+		</figure>
+		<hr>
+		<input type="text" id="input8" value="Ширина: 300px" width="300">
+		<button id="button8">Изменение стилей</button>
+		<hr>
+		<input type="submit" value="Нажато 0 раз" id="input9">
+		<hr>
+		<input type="text" id="experimental" value="Внутришечка" style="color:red">
+		<button id="exp1">Сбросить лишнии стили</button>
+		<button id="exp2">Скрыть инпут</button>
+		<button id="exp3">Зафлоатить</button>
+		<button id="exp4">Показать инлайн стили</button>
+		<button id="exp5">Переключить disabled</button>
+		<hr>
+	</div>
+	
+	
+	<script src="15_basic_DOM.js"></script>
+</body>
+</html>
