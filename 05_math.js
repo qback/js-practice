@@ -132,6 +132,6 @@ for (let index = 2; index <= a; index++) {
 	}
 	if (index === a && index !== 1) {
 		arrMult.push(index);
-	} 
+	}
 }
 console.log(arrMult);

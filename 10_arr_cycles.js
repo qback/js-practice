@@ -1,9 +1,9 @@
 // Заполнение массивов
 //  Заполните массив следующим образом: в первый элемент запишите 'x', во второй 'xx', в третий 'xxx' и так далее.
 let arr = [];
-for (var index = 1; index < 5; index++) {
+for (let index = 1; index < 5; index++) {
 	let str = '';
-	for (var i = 1; i <= index; i++) {
+	for (let i = 1; i <= index; i++) {
 		str += 'x';
 	}
 	arr.push(str);
@@ -12,9 +12,9 @@ console.log(arr);
 
 //  Заполните массив следующим образом: в первый элемент запишите '1', во второй '22', в третий '333' и так далее.
 arr = [];
-for (var index = 1; index < 5; index++) {
+for (let index = 1; index < 5; index++) {
 	let str = '';
-	for (var i = 1; i <= index; i++) {
+	for (let i = 1; i <= index; i++) {
 		str += index;
 	}
 	arr.push(str);
@@ -22,9 +22,9 @@ for (var index = 1; index < 5; index++) {
 console.log(arr);
 
 //  Сделайте функцию arrayFill, которая будет заполнять массив заданными значениями. Первым параметром функция принимает значение, которым заполнять массив, а вторым - сколько элементов должно быть в массиве. Пример: arrayFill('x', 5) сделает массив ['x', 'x', 'x', 'x', 'x'].
-function arrayFill (value, size) {
-	let arr = [];
-	for (var index = 0; index < size; index++) {
+function arrayFill(value, size) {
+	const arr = [];
+	for (let index = 0; index < size; index++) {
 		arr.push(value);
 	}
 	return arr;
@@ -32,10 +32,10 @@ function arrayFill (value, size) {
 console.log(arrayFill('x', 5));
 
 //  Дан массив с числами. Узнайте сколько элементов с начала массива надо сложить, чтобы в сумме получилось больше 10-ти.
-function exploreSumIndex (arr, value = 10) {
+function exploreSumIndex(arr, value = 10) {
 	let temp = 0;
 	let counter;
-	arr.some(function(element, index) {
+	arr.some(function (element, index) {
 		temp += element;
 		if (temp > 10) {
 			counter = index;
@@ -116,28 +116,28 @@ console.table(arr);
 // пусть дан массив с числами, давайте запишем в новый массив только те элементы, сумма цифр в которых от 1 до 9
 
 (function () {
-	var arr = [12, 19, 28, 13, 14, 345];
-	var result = [];
-
-	for (var i = 0; i < arr.length; i++) {
-		if (inRange(arr[i])) {
-			result.push(arr[i]);
-		}
-	}
-	console.log(result);
-
 	function inRange(num) {
-		var sum = arraySum(getDigits(num));
+		let sum = arraySum(getDigits(num));
 		return sum >= 1 && sum <= 9;
 	}
 	function getDigits(num) {
 		return String(num).split('');
 	}
 	function arraySum(arr) {
-		var sum = 0;
-		for (var i = 0; i < arr.length; i++) {
+		let sum = 0;
+		for (let i = 0; i < arr.length; i++) {
 			sum += Number(arr[i]);
 		}
 		return sum;
 	}
+
+	let arr = [12, 19, 28, 13, 14, 345];
+	let result = [];
+
+	for (let i = 0; i < arr.length; i++) {
+		if (inRange(arr[i])) {
+			result.push(arr[i]);
+		}
+	}
+	console.log(result);
 })();

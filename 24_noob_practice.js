@@ -76,7 +76,7 @@ const common = {
 					<input type="text" class="form-control" aria-label="${supArr[index]}" value=${item}>
 				</div>`;
 			node.insertAdjacentHTML('beforeend', input);
-		})
+		});
 	}
 	incomeInput.addEventListener('blur', function () {
 		const value = this.value;
@@ -136,24 +136,12 @@ const common = {
 ;(function () {
 	const incomeInput = document.querySelector('.date-convert .income');
 	incomeInput.addEventListener('blur', function () {
-		this.value = this.value.split('.').join('-');
+		this.value = this.value.split('.').reverse().join('-');
 	});
 })()
 
 //  Дан инпут. В него вводится год рождения пользователя. По нажатию на кнопку выведите в абзац ниже сколько пользователю лет.
-;(function (moment) {
-	const incomeInput = document.querySelector('.birth input');
-	const btn = document.querySelector('.birth button');
-	const resultNode = document.querySelector('.birth span');
-	btn.addEventListener('click', ev => {
-		ev.preventDefault();
-		const dateStr = incomeInput.value;
-		if (!moment(dateStr, 'DD-MM-YYYY').isValid()) {
-			resultNode.innerHTML = 'сколько-то лет';
-		}
-		
-	})
-})(moment)
+
 
 //  Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса узнайте день недели (словом), который приходится на эту дату.
 

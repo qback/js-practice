@@ -5,15 +5,15 @@
 	button1.onclick = function () {
 		const value = (input1.value !== '') ? input1.value : 'Ничего нет';
 		console.log(value);
-	}
+	};
 })();
 
 (function () {
 	const input2 = document.getElementById('input2');
 	const button2 = document.getElementById('button2');
 	button2.onclick = function () {
-		input2.value = 'Новый текст';	
-	}
+		input2.value = 'Новый текст';
+	};
 })();
 
 (function () {
@@ -23,7 +23,7 @@
 	const altImgSrc = 'http://theory.phphtml.net/exercises/javascript/dom/osnovy-raboty-s-dom-v-javascript/2/3/2.jpg';
 	button3.onclick = function () {
 		img3.src = (img3.src === startImgSrc) ? altImgSrc : startImgSrc;
-	}
+	};
 })();
 
 (function () {
@@ -58,7 +58,7 @@
 	};
 	img4.onmouseout = function () {
 		this.src = startImgSrc;
-	}  
+	};
 })();
 
 (function () {
@@ -66,7 +66,7 @@
 	const button8 = input8.nextElementSibling;
 	button8.onclick = function () {
 		input8.style.cssText = 'width: 500px; color: red';
-		input8.value = `Ширина: ${getComputedStyle(input8).width}`; 
+		input8.value = `Ширина: ${getComputedStyle(input8).width}`;
 	};
 })();
 
@@ -76,7 +76,7 @@
 	input.onclick = function (e) {
 		e.preventDefault();
 		this.value = `Нажато ${++counter} раз`;
-	}
+	};
 })();
 
 (function () {
@@ -104,5 +104,5 @@
 	};
 	disable.onclick = function () {
 		input.disabled = !input.disabled;
-	}
-})()
+	};
+})();

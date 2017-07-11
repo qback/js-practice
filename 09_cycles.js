@@ -41,7 +41,7 @@ console.log($str);
 // xxxxx
 // Показать решение.
 for (let index = 1; index < 21; index++) {
-	for (let i = 1; i <= index ; i++) {
+	for (let i = 1; i <= index; i++) {
 		document.write('x');
 	}
 	document.write('<br>');
@@ -60,7 +60,7 @@ for (let index = 1; index < 21; index++) {
 // 999999999
 // Показать решение.
 for (let index = 1; index < 10; index++) {
-	for (let i = 1; i <= index ; i++) {
+	for (let i = 1; i <= index; i++) {
 		document.write(index);
 	}
 	document.write('<br>');

@@ -106,7 +106,7 @@ console.log('-'.repeat(20));
 //  Дана строка из 3-х цифр. Найдите сумму этих цифр. То есть сложите как числа первый символ строки, второй и третий.
 str = '570';
 let result = str.split('').reduce((previous, current) => {
-	return ~~previous + ~~current;
+	return previous + ~~current;
 }, 0);
 console.log(result);
 console.log('-'.repeat(20));
@@ -115,10 +115,10 @@ console.log('-'.repeat(20));
 function compareStringSum (income) {
 	const [arr1, arr2] = [income.slice(0, 3).split(''), income.slice(3).split('')];
 	const sumArr1 = arr1.reduce((previous, current) => {
-		return ~~previous + ~~current;
+		return previous + ~~current;
 	}, 0);
 	const sumArr2 = arr2.reduce((previous, current) => {
-		return ~~previous + ~~current;
+		return previous + ~~current;
 	}, 0);
 	return sumArr1 === sumArr2;
 }

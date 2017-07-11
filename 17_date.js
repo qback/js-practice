@@ -21,7 +21,7 @@ function getDateString (date) {
 	const days = normalizeDigits(today.getDate());
 	const months = normalizeDigits(today.getMonth() + 1);
 	const year = today.getFullYear();
-	return hours + ':' + minutes + ':' + seconds + ' ' + days + '.' + months + '.' + year; 
+	return hours + ':' + minutes + ':' + seconds + ' ' + days + '.' + months + '.' + year;
 }
 console.log(getDateString(Date()));
 
@@ -61,12 +61,12 @@ console.log(~~((today.getTime() - todayStart.getTime()) / 1000));
 	const input = document.getElementById('birthDay');
 	const span = document.getElementById('days');
 	const example = document.getElementById('example');
-	function getActualBirthDay (date) {
+	function getActualBirthDay(date) {
 		const today = new Date();
 		const actualBirthDay = new Date(today.getFullYear(), date.getMonth(), date.getDate());
 		return (today - actualBirthDay < 0) ? actualBirthDay : new Date(today.getFullYear() + 1, date.getMonth(), date.getDate());
 	}
-	function showremainningTime (dateString) {
+	function showremainningTime(dateString) {
 		const birthDate = new Date(Date.parse(dateString));
 		const actualBirthDay = getActualBirthDay(birthDate);
 		const daysDiff = Math.ceil(((actualBirthDay - new Date()) / 1000 / 60 / 60 / 24));
@@ -107,16 +107,16 @@ console.log(~~((today.getTime() - todayStart.getTime()) / 1000));
 	const next = document.getElementById('next');
 	const value = document.getElementById('value');
 	const days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
-	function calcRemaining (next, today) {
+	function calcRemaining(next, today) {
 		const subDays = next - today;
 		return (subDays > 0) ? subDays : subDays + 7; 
 	}
 	function calcMessage (day) {
 		const selectDay = Number(day);
-		const todayDay = new Date().getDay();
-		today.innerHTML = days[todayDay];
+		const currentDay = new Date().getDay();
+		today.innerHTML = days[currentDay];
 		next.innerHTML = days[selectDay];
-		value.innerHTML = calcRemaining(selectDay, todayDay);
+		value.innerHTML = calcRemaining(selectDay, currentDay);
 	}
 	select.onchange = function (e) {
 		calcMessage(e.target.value);

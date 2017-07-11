@@ -22,7 +22,7 @@ const showSrc = (function () {
 //  Дополнить предыдущую задачу: после первого наведению на ссылку следует отвязать от нее событие, которое добавляет href в конец текста.
 ;(function () {
 	const links = Array.from(document.querySelectorAll('.links2 a'));
-	function addHref () {
+	function addHref() {
 		this.textContent += ` (${this.getAttribute('href')})`;
 		this.removeEventListener('mouseover', addHref);
 	}
@@ -37,10 +37,10 @@ const showSrc = (function () {
 ;(function () {
 	const inputs = Array.from(document.querySelectorAll('.inputs input'));
 	const test = document.getElementById('test');
-	function showInputContent () {
+	function showInputContent() {
 		test.textContent = this.value ? this.value : 'input пуст';
 	}
-	function alertContent () {
+	function alertContent() {
 		alert(this.value ? this.value : 'Контента нет');
 		this.removeEventListener('click', alertContent);
 	}
@@ -76,19 +76,22 @@ const showSrc = (function () {
 				this.style.boxShadow = '0 0 5px 0 green';
 			}
 		});
-	})
+		item.addEventListener('focus', function () {
+			this.style = '';
+		});
+	});
 })()
 
 
 //  Даны дивы. По первому нажатию на каждый див он красится красным фоном, по второму красится обратно и так далее каждый клик происходит чередование фона. Сделайте так, чтобы было две функции: одна красит в красный цвет, другая в зеленый и они сменяли друг друга через removeEventListener.
 ;(function () {
 	const divs = Array.from(document.querySelectorAll('.chameleon .click'));
-	function doBgRed () {
+	function doBgRed() {
 		this.style.backgroundColor = 'red';
 		this.removeEventListener('click', doBgRed);
 		this.addEventListener('click', doBgGreen);
 	}
-	function doBgGreen () {
+	function doBgGreen() {
 		this.style.backgroundColor = 'green';
 		this.removeEventListener('click', doBgGreen);
 		this.addEventListener('click', doBgRed);

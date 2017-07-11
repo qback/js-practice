@@ -11,7 +11,7 @@ let arrSum = arr.reduce((previous, current) => {
 		return previous + current;
 	}
 	return previous;
-}, 0)
+}, 0);
 console.log(arrSum);
 
 //  Дан массив с элементами 1, 2, 5, 9, 4, 13, 4, 10. С помощью цикла foreach и оператора if проверьте есть ли в массиве элемент со значением, равным 4. Если есть - выведите на экран 'Есть!' и выйдите из цикла. Если нет - ничего делать не надо. Показать решение.
@@ -30,7 +30,7 @@ arr = [10, 20, 30, 50, 235, 3000];
 filteredArray = arr.filter((item) => {
 	const firstItemSymbol = ~~`${item}`[0];
 	return [1, 2, 5].includes(firstItemSymbol);
-})
+});
 console.log(filteredArray);
 
 //  Дан массив с элементами 1, 2, 3, 4, 5, 6, 7, 8, 9. С помощью цикла for создайте строку '-1-2-3-4-5-6-7-8-9-'. Показать решение.
@@ -59,11 +59,12 @@ document.body.appendChild(list);
 
 //  Составьте массив дней недели. С помощью цикла for выведите все дни недели, а текущий день выведите курсивом. Текущий день должен храниться в переменной day. Показать решение.
 arr = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
-const currentDayIndex = new Date().getDay() - 1;
+const currentDayIndex = new Date().getDay();
+const actualIndex = currentDayIndex ? currentDayIndex - 1 : 6;
 list = document.createElement('ul');
 arr.forEach((item, index) => {
 	const listItem = document.createElement('li');
-	if (index === currentDayIndex) {
+	if (index === actualIndex) {
 		listItem.innerHTML = `<em>${item}</em>`;
 		list.appendChild(listItem);
 		return;

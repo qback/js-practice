@@ -83,7 +83,7 @@ function replaceSymbols(string, a, b) {
 function strReplace(arrOld, arrNew, string) {
 	arrOld.map((item, index) => {
 		string = replaceSymbols(string, item, arrNew[index]);
-	})
+	});
 	return string;
 }
 console.log(strReplace(['ы', 'е'], ['и', 'и'], 'ЖЫлЕ богато жыле'));
@@ -98,7 +98,7 @@ console.log(inArray('two', ['one', 'two', 3]));
 //  Дана строка, например, '123456'. Сделайте из нее '214365'.
 str = '123456';
 strArr = str.split('');
-for (var index = 1; index < strArr.length; index += 2) {
+for (let index = 1; index < strArr.length; index += 2) {
 	let temp = strArr[index - 1];
 	strArr[index - 1] = strArr[index];
 	strArr[index] = temp;
@@ -123,7 +123,7 @@ function marryArrays(firstArr, secondArr) {
 	const temp = {};
 	firstArr.forEach((item, index) => {
 		temp[item] = secondArr[index];
-	})
+	});
 	return temp;
 }
 console.log(marryArrays(['a', 'b'], ['c', 'd']));
@@ -137,7 +137,7 @@ function divideArray(arr, value) {
 	}
 	return newArr;
 }
-console.table(divideArray([1, 2, 3, 4, 5, 6, 7, 8, 9], 2));
+console.log(divideArray([1, 2, 3, 4, 5, 6, 7, 8, 9], 2));
 
 //  Дана строка, которая содержит список классов CSS - слов, разделенных пробелом: str='open menu'. Создайте функцию addClass(str, 'class'), которая добавляет в список новый класс, но только если его там еще нет. Метод classList использовать запрещено.
 // Примеры: addClass('open menu', 'class') сделает строку 'open menu class'. А вот addClass('open menu', 'menu') вернет строку 'open menu', так как класс menu уже есть в строке.
@@ -179,7 +179,7 @@ function isUpperCase(character) {
 const translitMe = (function () {
 	const cyr = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'];
 	const lat = ['a', 'b', 'v', 'g', 'd', 'e', 'yo', 'zh', 'z', 'i', 'y', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'f', 'kh', 'ts', 'ch', 'sh', 'sch', '', 'i', '', 'e', 'yu', 'ya'];
-	return function(str) {
+	return function (str) {
 		let strArray = str.split('');
 		strArray = strArray.map((item, index) => {
 			const lowerCaseItem = item.toLowerCase();
@@ -190,7 +190,7 @@ const translitMe = (function () {
 			return item;
 		});
 		return strArray.join('');
-	}
+	};
 })();
 console.log(translitMe('Ням-ням!! ВкуснЯшка!'));
 
@@ -214,7 +214,7 @@ console.log(chooseEnding(1, 'яблоко', 'яблока', 'яблок'));
 // Задача: найдите все пары дружественных чисел в промежутке от 1 до 10000. Для этого сделайте вспомогательную функцию, которая находит все делители числа и возвращает их в виде массива. Также сделайте функцию, которая параметром принимает массив, а возвращает его сумму.
 function findDividers(value) {
 	const arr = [];
-	for (var index = 1; index < value; index++) {
+	for (let index = 1; index < value; index++) {
 		if (value % index === 0) {
 			arr.push(index);
 		}
@@ -224,11 +224,11 @@ function findDividers(value) {
 function findArrSum(arr) {
 	return arr.reduce((previous, current) => {
 		return previous + current;
-	}, 0)
+	}, 0);
 }
 function findAmicable(value) {
 	const temp = {};
-	for (var index = 1; index <= value ; index++) {
+	for (let index = 1; index <= value; index++) {
 		const dividerSum = findArrSum(findDividers(index));
 		if (index === dividerSum) {
 			continue;
@@ -251,11 +251,11 @@ function getRandomInt(min, max) {
 function compareRandom(a, b) {
 	return Math.random() - 0.5;
 }
-//хороший вариант от Кантора
+// хороший вариант от Кантора
 function shuffleGood(arr) {
 	return arr.sort(compareRandom);
 }
-//говнокод
+// говнокод
 function shuffle(arr) {
 	const temp = [];
 	for (let index = arr.length - 1; index >= 0; index--) {
@@ -264,8 +264,8 @@ function shuffle(arr) {
 	}
 	return temp;
 }
-console.log(shuffle([1, 2, 3, 4])); 
-console.log(shuffleGood([1, 2, 3, 4])); 
+console.log(shuffle([1, 2, 3, 4]));
+console.log(shuffleGood([1, 2, 3, 4]));
 
 //  Реализуйте функцию strShuffle, которая перемешивает символы строки в случайном порядке.
 function strShuffle(str) {

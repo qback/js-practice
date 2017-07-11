@@ -49,7 +49,7 @@
 	select.addEventListener('change', function (ev) {
 		const activeIndex = this.selectedIndex;
 		input.value = this.options[activeIndex].text;
-	})
+	});
 })()
 
 //  Дан селект. Дан инпут. Дана кнопка. Сделайте так, чтобы в инпут можно было ввести число, нажать на кнопку и в селекте становился выбранным пункт с этим номером.
@@ -107,7 +107,7 @@
 		citiesArr.forEach((item, index) => {
 			const option = createOption(item);
 			citySelect.options[index] = option;
-		})
+		});
 	}
 	function initCountrySelect (obj) {
 		for (let key in obj) {

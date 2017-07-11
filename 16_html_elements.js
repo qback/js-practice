@@ -18,14 +18,14 @@
 	const el2 = document.getElementById('el2');
 	const resultSpan = document.getElementById('result');
 
-	function sum (a = 0, b = 0) {
+	function sum(a = 0, b = 0) {
 		return Number(a) + Number(b);
 	}
 
 	btn.onclick = function () {
 		const result = sum(el1.value, el2.value);
 		resultSpan.innerHTML = result;
-	}
+	};
 })()
 
 ;(function () {
@@ -34,7 +34,7 @@
 	const textNodes = tagsBlock.getElementsByTagName('p');
 
 	btn.onclick = function () {
-		for (var index = 0; index < textNodes.length; index++) {
+		for (let index = 0; index < textNodes.length; index++) {
 			textNodes[index].innerHTML = 'Опаньки';
 		}
 	}
@@ -48,17 +48,17 @@
 
 	btnClasses.onclick = function () {
 		const textNodes = classesBlock.getElementsByClassName('www');
-		for (var index = 0; index < textNodes.length; index++) {
+		for (let index = 0; index < textNodes.length; index++) {
 			textNodes[index].innerHTML = 'www';
 		}
-	}
+	};
 
 	btnQuery.onclick = function () {
 		const textNodes = classesBlock.querySelectorAll('p.www');
-		for (var index = 0; index < textNodes.length; index++) {
+		for (let index = 0; index < textNodes.length; index++) {
 			textNodes[index].innerHTML = 'p.www';
 		}
-	}
+	};
 
 })()
 
@@ -92,7 +92,7 @@
 
 	input.oninput = function () {
 		span.innerHTML = input.value;
-	}
+	};
 })()
 
 ;(function () {
@@ -104,8 +104,8 @@
 	btn.onclick = function () {
 		links[0].innerHTML += ` ${links[0].href}`;
 		links[1].innerHTML += ` ${links[1].getAttribute('href')}`;
-		for (var index = 0; index < paragraphs.length; index++) {
+		for (let index = 0; index < paragraphs.length; index++) {
 			paragraphs[index].innerHTML += ` №${index + 1}`;
 		}
-	}
-})()
+	};
+})();

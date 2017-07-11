@@ -11,7 +11,7 @@
 			num++;
 			counter.innerHTML = num;
 		}, 1000);
-	}
+	};
 })()
 
 //  Создайте отсчет с кнопкой остановки:
@@ -22,7 +22,7 @@
 	const buttons = document.querySelector('.start-stop .buttons');
 	let num = 0;
 	let startCounter = null;
-	function count () {
+	function count() {
 		num++;
 		counter.innerHTML = num;
 	}
@@ -39,17 +39,17 @@
 			target.disabled = true;
 			target.previousElementSibling.disabled = false;
 		}
-	}
+	};
 
 })()
 
 //  Создайте тикающие часики:
 ;(function () {
 	const clockContainer = document.querySelector('.clock p');
-	function normalizeDigits (digits) {
+	function normalizeDigits(digits) {
 		return digits < 10 ? '0' + digits : digits;
 	}
-	function calcTimeString () {
+	function calcTimeString() {
 		const now = new Date();
 		const hours = normalizeDigits(now.getHours());
 		const minutes = normalizeDigits(now.getMinutes());
@@ -64,7 +64,7 @@
 	const button = document.querySelector('.reverseCounter input');
 	const counter = document.querySelector('.reverseCounter p');
 	let num = 10;
-	function timer () {
+	function timer() {
 		num--;
 		counter.innerHTML = num;
 		if (num > 0) {
@@ -78,7 +78,7 @@
 		this.disabled = true;
 		this.classList.add('disabled');
 		timer();
-	}
+	};
 })()
 
 //  Создайте простой слайдер:
@@ -91,7 +91,7 @@
 		if (num === 3) {
 			num = 0;
 		}
-	}, 1000)
+	}, 1000);
 })()
 
 //  Создайте карусель:
@@ -115,12 +115,12 @@
 	const stop = document.querySelector('.complex-slider .stop');
 	let arrImages = [];
 	let timer = null;
-	function moveArrayElements (arr) {
+	function moveArrayElements(arr) {
 		const elem = arr.shift();
 		arr.push(elem);
 		return arr;
 	}
-	function changeSrc () {
+	function changeSrc() {
 		arrImages = moveArrayElements(arrImages);
 		for (let index = 0; index < images.length; index++) {
 			images[index].src = arrImages[index];
@@ -147,10 +147,10 @@
 	const hoursTd = document.querySelector('.table .hours');
 	const minutesTd = document.querySelector('.table .minutes');
 	const secondsTd = document.querySelector('.table .seconds');
-	function normalizeDigits (digits) {
+	function normalizeDigits(digits) {
 		return digits < 10 ? '0' + digits : digits;
 	}
-	function calcRemain () {
+	function calcRemain() {
 		const now = new Date();
 		const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
 		const diffSec = Math.floor((tomorrow - now) / 1000);

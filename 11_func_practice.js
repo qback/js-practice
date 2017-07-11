@@ -66,7 +66,7 @@ function getCommonDividers(first, second) {
 	firstArr.map((item) => {
 		if (secondArr.includes(item)) {
 			arrCommonDividers.push(item);
-		} 
+		}
 	});
 	return arrCommonDividers.length ? arrCommonDividers : 'no common dividers';
 }
@@ -90,7 +90,7 @@ console.log(isTicketLucky('143008'));
 //  Создайте массив всех автобусных билетов из 6-ти цифр. Учтите, что билеты могут начинаться с нуля.
 let defaultTicket = '000000';
 arr = [];
-function getDigitsNum (num) {
+function getDigitsNum(num) {
 	return String(num).length;
 }
 for (let index = 1; index < 1000000; index++) {

@@ -4,15 +4,15 @@
 
 // Значения по умолчанию
 //  Сделайте функцию cut, которая первым параметром будет принимать строку, а вторым параметром - сколько первых символов оставить в этой строке. Второй параметр должен быть необязательным и по умолчанию принимать значение 10.
-function cutString (str, cutLength = 10) {
+function cutString(str, cutLength = 10) {
 	return str.substr(0, cutLength);
 }
-console.log(cutString('1234567890fffffffffff1112'))
-console.log(cutString('1234567890fffffffffff1112', 6))
+console.log(cutString('1234567890fffffffffff1112'));
+console.log(cutString('1234567890fffffffffff1112', 6));
 
 // Работа с рекурсией
 //  Дан массив с числами. Выведите последовательно его элементы используя рекурсию и не используя цикл.
-function exposeArr (arr) {
+function exposeArr(arr) {
 	document.write(arr.shift() + '<br>');
 	if (arr.length) {
 		exposeArr(arr);
@@ -21,9 +21,9 @@ function exposeArr (arr) {
 exposeArr(['X', 'XL', 'XXL']);
 
 //  Дан массив с числами. Найдите сумму элементов этого массива используя рекурсию и не используя цикл.
-function findArrSum (array) {
+function findArrSum(array) {
 	let result = 0;
-	function findSum (arr) {
+	function findSum(arr) {
 		result += arr.pop();
 		if (arr.length) {
 			findSum(arr);
@@ -41,7 +41,7 @@ console.log(findArrSum([1, 2, 3, 4]));
 //  Дан многомерный массив произвольного уровня вложенности. Узнайте его уровень вложенности.
 const getInnerLevel = (arr) => {
 	let level = 0;
-	function deep (item) {
+	function deep(item) {
 		if (Array.isArray(item)) {
 			level++;
 			deep(item[0]);

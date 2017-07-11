@@ -176,11 +176,11 @@
 ;(function () {
 	const victim = document.querySelector('.victim');
 	const button = document.querySelector('.remove button');
-	function killVictim () {
+	function killVictim() {
 		victim.classList.add('text-white', 'bg-danger');
 		setTimeout(() => {
 			victim.parentElement.removeChild(victim);
-		}, 1000)
+		}, 1000);
 		this.classList.remove('btn-primary');
 		this.classList.add('btn-danger');
 		this.removeEventListener('click', killVictim);

@@ -21,10 +21,11 @@ const strSubstr = str.substr(2, 3);
 const strSubstring = str.substring(2, 5);
 const strSlice = str.slice(2, -12);
 console.log(strSubstr, strSubstring, strSlice);
+
 //  Дана строка 'я учу javascript!'. Найдите позицию подстроки 'учу'. Показать решение.
 str = 'я учу javascript!';
 let pattern = 'учу';
-console.log(str.toLowerCase().indexOf(pattern)); 
+console.log(str.toLowerCase().indexOf(pattern));
 
 //  Дана переменная str, в которой хранится какой-либо текст. Реализуйте обрезание длинного текста по следующему принципу: если количество символов этого текста больше заданного в переменной n, то в переменную result запишем первые n символов строки str и добавим в конец троеточие '...'. В противном случае в переменную result запишем содержимое переменной str. Показать решение.
 str = 'я учу javascript!';
