@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+	    crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+	    crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+	    crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+	    crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/momentjs/2.18.1/moment.min.js"></script>
+	<style>
+		body {
+			padding: 20px 0px;
+		}
+
+		.red {
+			color: red;
+		}
+
+		.bold {
+			font-weight: 700;
+		}
+
+		.through {
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="link-check">
+			<div class="form-check">
+				<label class="form-check-label">
+					<input class="form-check-input" type="checkbox" value="">
+					Option one is this and that&mdash;be sure to include why it's great
+				</label>
+			</div>
+			<button type="button" class="btn btn-link">Переключить чекбокс</button>
+		</div>
+		<hr>
+		<div class="link-all">
+			<div class="form-check">
+				<label class="form-check-label">
+					<input class="form-check-input" type="checkbox" value="">
+					Option 
+				</label>
+				<label class="form-check-label">
+					<input class="form-check-input" type="checkbox" value="">
+					Option one 
+				</label>
+			</div>
+			<button type="button" class="btn btn-link">Выбрать все чекбоксы
+		</div>
+		<hr>
+		<div class="vote">
+			<div class="form-check">
+				<p>Какой язык ты любишь?</p>
+				<label class="form-check-label">
+					<input class="form-check-input" type="radio" name="exampleRadios" value="Никакой"> Никакой
+				</label>
+				<label class="form-check-label">
+					<input class="form-check-input" type="radio" name="exampleRadios" value="PHP"> PHP
+				</label>
+				<label class="form-check-label">
+					<input class="form-check-input" type="radio" name="exampleRadios" value="Javascript"> Javascript
+				</label>
+			</div>
+			<p class="font-weight-bold result"></p>
+		</div>
+		<hr>
+		<div class="vote-check">
+			<p>Какой язык ты изучаешь?</p>
+			<label class="custom-control custom-checkbox">
+				<input type="checkbox" class="custom-control-input" value="JS">
+				<span class="custom-control-indicator"></span>
+				<span class="custom-control-description">JS</span>
+			</label>
+			<label class="custom-control custom-checkbox">
+				<input type="checkbox" class="custom-control-input" value="PHP">
+				<span class="custom-control-indicator"></span>
+				<span class="custom-control-description">PHP</span>
+			</label>
+			<p class="font-weight-bold result"></p>
+		</div>
+		<hr>
+		<div class="toggle-input">
+			<label class="custom-control custom-checkbox">
+				<input type="checkbox" class="custom-control-input">
+				<span class="custom-control-indicator"></span>
+				<span class="custom-control-description">Спрятать нижний инпут
+			</label>
+			<input type="text" class="form-control" placeholder="Example input">
+		</div>
+		<hr>
+		<div class="custom-li">
+			<input type="text">
+			<li>Номер 1</li>
+			<li>Номер 2</li>
+			<li>Номер 3</li>
+		</div>
+		<hr>
+		<div class="test">
+			<p>Test Text</p>
+			<label><input type="checkbox" value="through">Зачеркнуться</label>
+			<label><input type="checkbox" value="bold">Растолстеть</label>
+			<label><input type="checkbox" value="red">Покраснеть</label>
+		</div>
+		<hr>
+		<div class="cards">
+			<div class="card">
+				<img class="card-img-top" src="https://placeimg.com/1200/100/any" alt="Card image cap">
+				<div class="card-block">
+					<h4 class="card-title">Card title</h4>
+					<p class="card-text">
+						Some quick example text to build on the card title
+						and make up the bulk of the card's content.
+					</p>
+					<a href="javascript:void(0);" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-img-top" src="https://placeimg.com/1200/100/any" alt="Card image cap">
+				<div class="card-block">
+					<h4 class="card-title">Card title</h4>
+					<p class="card-text">
+						Some quick example text to build on the card title
+						and make up the bulk of the card's content.
+					</p>
+					<a href="javascript:void(0);" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<script src="26_noob_practice_2.js"></script>
+</body>
+
+</html>

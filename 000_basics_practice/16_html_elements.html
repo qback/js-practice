@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+		<h3>Свойства innerHTML, outerHTML</h3>
+		<p class="text-example">При нажатии на кнопку текст в абзаце поменяется.</p>
+		<p class="text-example">При нажатии на кнопку текст в абзаце поменяется.</p>
+		<p class="text-example">При нажатии на кнопку абзац станет h4, но текст останется.</p>
+		<button id="btn1">Поменять Текст</button>
+		<hr>
+		<input type="text" id="el1"> + <input type="text" id="el2"> = <span id="result">0</span><br><br>
+		<button id="showResult">Узнать сумму</button>
+		<hr>
+		<h3>Метод getElementsByTagName</h3>
+		<div class="tags">
+			<p>При нажатии на кнопку текст в каждом абзаце поменяется.</p>
+			<p>При нажатии на кнопку текст в каждом абзаце поменяется.</p>
+			<p>При нажатии на кнопку текст в каждом абзаце поменяется.</p>
+			<h4>А я h4 и не поменяюсь!</h4>
+			<button>Нажми</button>
+		</div>
+		<hr>
+		<h3>Метод getElementsByClassName и QuerySelectorAll</h3>
+		<div class="classes">
+			<h4 class="www">Заголовок с классом www.</h4>
+			<p class="www">Абзац с классом www.</p>
+			<p class="www">Абзац с классом www.</p>
+			<p class="www">Абзац с классом www.</p>
+			<p>Просто абзац, не поменяется.</p>
+			<button class="byClass">Меняем по классу[getElementsByClassName]</button>
+			<button class="byClass&Tag">Меняем по классу и тегу p[querySelectorAll]</button>
+		</div>
+		<hr>
+		<h3>Методы setAttribute, getAttribute, removeAttribute, hasAttribute</h3>
+		<div class="attributes">
+			<p class="alert">Абзац с классом alert</p>
+			<button class="get">Вывести аттрибут абзаца -class-</button>
+			<button class="set">Изменить аттрибут абзаца -class-</button>
+			<button class="remove">Удалить аттрибут абзаца -class-</button>
+			<button class="has">Проверить есть ли аттрибут -class-</button>
+		</div>
+		<hr>
+		<h3>Разное</h3>
+		<div class="binding">
+			<input type="text" placeholder="Напечатай что-нибудь">
+			<span></span>
+		</div>
+		<hr>
+		<div class="various">
+			<a href="ya.ru" class="help-block">Ссылка</a>
+			<a href="google.ru" class="help-block">Ссылка</a>
+			<p>Абзац с текстом</p>
+			<p>Абзац с текстом</p>
+			<p>Абзац с текстом</p>
+			<button id="magicButton">Поменять все</button>
+		</div>
+		<hr>
+	</div>
+	
+	
+	<script src="16_html_elements.js"></script>
+</body>
+</html>
