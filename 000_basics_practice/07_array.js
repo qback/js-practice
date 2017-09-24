@@ -59,7 +59,6 @@ arr = [1, 2, 3, 4, 5];
 arr.splice(3, 0, 'a', 'b', 'c');
 console.log(arr);
 
-
 //  Дан массив [1, 2, 3, 4, 5]. С помощью метода splice сделайте из него массив [1, 'a', 'b', 2, 3, 4, 'c', 5, 'e']. Показать решение.
 arr = [1, 2, 3, 4, 5];
 arr.splice(1, 0, 'a', 'b');
@@ -71,12 +70,12 @@ console.log(arr);
 // Для решения задач данного блока вам понадобятся следующие методы: sort.
 // 	Дан массив [3, 4, 1, 2, 7]. Отсортируйте его. Показать решение.
 arr = [3, 4, 1, 2, 7];
-arr.sort((a, b) => a < b ? -1 : 1);
+arr.sort((a, b) => (a < b ? -1 : 1));
 console.log(arr);
 
 // Работа с Object.keys
 // Для решения задач данного блока вам понадобятся следующие методы: Object.keys.
 // 	Дан объект {js:'test', jq: 'hello', css: 'world'}. Получите массив его ключей. Показать решение.
-let obj = {js: 'test', jq: 'hello', css: 'world'};
+let obj = { js: 'test', jq: 'hello', css: 'world' };
 arr = Object.keys(obj);
 console.log(arr);

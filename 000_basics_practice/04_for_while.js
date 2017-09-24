@@ -1,7 +1,7 @@
 // Задачи
 //  Дан массив с элементами 2, 5, 9, 15, 0, 4. С помощью цикла for и оператора if выведите на экран столбец тех элементов массива, которые больше 3-х, но меньше 10. Показать решение.
 let arr = [2, 5, 9, 15, 0, 4];
-let filteredArray = arr.filter((value) => value > 3 && value < 10);
+let filteredArray = arr.filter(value => value > 3 && value < 10);
 console.log(filteredArray);
 
 //  Дан массив с числами. Числа могут быть положительными и отрицательными. Найдите сумму положительных элементов массива.
@@ -18,7 +18,7 @@ console.log(arrSum);
 arr = [1, 2, 5, 9, 4, 13, 4, 10];
 // There is no way to stop or break a forEach()
 // Поэтому используем some()
-arr.some((item) => {
+arr.some(item => {
 	if (item === 4) {
 		console.log('Есть!!!');
 		return true;
@@ -27,7 +27,7 @@ arr.some((item) => {
 
 //  Дан массив числами, например: [10, 20, 30, 50, 235, 3000]. Выведите на экран только те числа из массива, которые начинаются на цифру 1, 2 или 5.
 arr = [10, 20, 30, 50, 235, 3000];
-filteredArray = arr.filter((item) => {
+filteredArray = arr.filter(item => {
 	const firstItemSymbol = ~~`${item}`[0];
 	return [1, 2, 5].includes(firstItemSymbol);
 });

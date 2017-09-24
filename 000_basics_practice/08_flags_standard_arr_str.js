@@ -2,21 +2,27 @@
 let str = 'строка';
 console.log(str[0].toUpperCase() + str.slice(1));
 
-//  Дана строка. Сделайте заглавным последний символ этой строки не используя цикл. 
+//  Дана строка. Сделайте заглавным последний символ этой строки не используя цикл.
 str = 'строка';
 console.log(str.slice(0, -1) + str.slice(-1).toUpperCase());
 
 //  Дана строка, например, '123456'. Переверните эту строку (сделайте из нее '654321') не используя цикл. Показать подсказку.
 str = '123456';
-console.log(str.split('').reverse().join('')); 
+console.log(
+	str
+		.split('')
+		.reverse()
+		.join('')
+);
 
 //  Дано число, например, 3751. Отсортируйте цифры в нем (сделайте из него 1357) не используя цикл. Показать подсказку.
 let num = 3751;
 let newNum = Number(
-	String.prototype.split.call(num, '')
-	.sort((a, b) => a < b ? -1 : 1)
-	.join('')
-	);
+	String.prototype.split
+		.call(num, '')
+		.sort((a, b) => (a < b ? -1 : 1))
+		.join('')
+);
 console.log(newNum);
 
 //  Проверьте, что строка начинается на http://. Показать подсказку.
@@ -92,18 +98,18 @@ for (let index = 0; index < arr.length; index++) {
 console.log(flag ? 'соседи есть' : 'соседей нет');
 
 //  Сделайте функцию, которая параметрами принимает 2 числа. Если эти числа равны - пусть функция вернет true, а если не равны - false.
-function isEqual (a, b) {
+function isEqual(a, b) {
 	return a === b;
 }
 console.log(isEqual(1, 1));
 //  Сделайте функцию, которая параметрами принимает 2 числа. Если их сумма больше 10 - пусть функция вернет true, а если нет - false.
-function isMoreThanTen (a, b) {
+function isMoreThanTen(a, b) {
 	return a + b > 10;
 }
 console.log(isMoreThanTen(5, 6));
 
 //  Сделайте функцию, которая параметром принимает число и проверяет - отрицательное оно или нет. Если отрицательное - пусть функция вернет true, а если нет - false.
-function isPos (a) {
+function isPos(a) {
 	return a < 0;
 }
 console.log(isPos(-1));

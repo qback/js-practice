@@ -30,7 +30,7 @@ console.log(str.toLowerCase().indexOf(pattern));
 //  Дана переменная str, в которой хранится какой-либо текст. Реализуйте обрезание длинного текста по следующему принципу: если количество символов этого текста больше заданного в переменной n, то в переменную result запишем первые n символов строки str и добавим в конец троеточие '...'. В противном случае в переменную result запишем содержимое переменной str. Показать решение.
 str = 'я учу javascript!';
 let str1 = 'я ем';
-const truncate = (string, n) => string.length > n ? `${string.substr(0, n)}...` : `${string}`;
+const truncate = (string, n) => (string.length > n ? `${string.substr(0, n)}...` : `${string}`);
 console.log(truncate(str, 5));
 console.log(truncate(str1, 10));
 
@@ -54,7 +54,12 @@ console.log(arr);
 
 //  В переменной date лежит дата в формате '2025-12-31'. Преобразуйте эту дату в формат '31.12.2025'. Показать решение.
 str = '2025-12-31';
-console.log(str.split('-').reverse().join('.'));
+console.log(
+	str
+		.split('-')
+		.reverse()
+		.join('.')
+);
 
 // Работа с join
 // Для решения задач данного блока вам понадобятся следующие методы: join.
@@ -69,9 +74,8 @@ console.log(str[0].toUpperCase() + str.slice(1));
 
 //  Преобразуйте первую букву каждого слова строки в верхний регистр. Показать решение.
 str = 'я учу javascript!';
-arr = str.split(' ').map((item) => item[0].toUpperCase() + item.slice(1));
+arr = str.split(' ').map(item => item[0].toUpperCase() + item.slice(1));
 console.log(arr.join(' '));
-
 
 //  Преобразуйте строку 'var_test_text' в 'varTestText'. Скрипт, конечно же, должен работать с любыми аналогичными строками. Показать решение.
 str = 'var_test_text';

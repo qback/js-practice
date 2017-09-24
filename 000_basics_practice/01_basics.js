@@ -40,8 +40,8 @@ console.log(arrResult);
 
 // Практика
 //  Напишите скрипт, который считает количество секунд в часе, в сутках, в месяце. Показать решение.
-function calcSeconds (income) {
-	const {sec = 0, min = 0, hours = 0} = income;
+function calcSeconds(income) {
+	const { sec = 0, min = 0, hours = 0 } = income;
 	return sec + min * 60 + hours * 60 * 60;
 }
 const example = {
@@ -61,5 +61,3 @@ function showCurrentTime() {
 }
 showCurrentTime();
 setInterval(showCurrentTime, 10000);
-
-

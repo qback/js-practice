@@ -35,7 +35,7 @@ console.log(arrayFill('x', 5));
 function exploreSumIndex(arr, value = 10) {
 	let temp = 0;
 	let counter;
-	arr.some(function (element, index) {
+	arr.some(function(element, index) {
 		temp += element;
 		if (temp > 10) {
 			counter = index;
@@ -67,9 +67,9 @@ console.log(arr1);
 // Многомерные массивы
 //  Дан двухмерный массив с числами, например [[1, 2, 3], [4, 5], [6]]. Найдите сумму элементов этого массива. Массив, конечно же, может быть произвольным.
 //  Дан трехмерный массив с числами, например [[[[1, 2], [3, 4]]], [[5, 6], [7, 8]]]]. Найдите сумму элементов этого массива. Массив, конечно же, может быть произвольным.
-const calcSum = (array) => {
+const calcSum = array => {
 	let sum = 0;
-	function calc (elem) {
+	function calc(elem) {
 		if (Array.isArray(elem)) {
 			for (let index = 0; index < elem.length; index++) {
 				calc(elem[index]);
@@ -80,23 +80,10 @@ const calcSum = (array) => {
 		return sum;
 	}
 	return calc(array);
-} 
+};
 
 console.log(calcSum([[1, 2, 3], [4, 5], [6]]));
-console.log(
-	calcSum(
-		[	
-			[
-				[1, 2],
-				[3, 4]
-			],
-			[
-				[5, 6],
-				[7, 8]
-			]
-		]
-	)
-);
+console.log(calcSum([[[1, 2], [3, 4]], [[5, 6], [7, 8]]]));
 
 //  С помощью двух циклов создайте массив [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 let value = 0;
@@ -111,11 +98,10 @@ for (let index = 0; index < 3; index++) {
 }
 console.table(arr);
 
-
 // ПРИМЕР ИЗ УЧЕБНИКА
 // пусть дан массив с числами, давайте запишем в новый массив только те элементы, сумма цифр в которых от 1 до 9
 
-(function () {
+(function() {
 	function inRange(num) {
 		let sum = arraySum(getDigits(num));
 		return sum >= 1 && sum <= 9;

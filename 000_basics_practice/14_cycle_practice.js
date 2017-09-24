@@ -51,7 +51,7 @@ console.log(arr);
 
 //  Дан массив с числами. С помощью цикла выведите только те элементы массива, которые больше нуля и меньше 10-ти.
 arr = [9, 15, 18, 15, 4, 8, 20, 11, 16, 10];
-arr = arr.filter((item) => {
+arr = arr.filter(item => {
 	return item > 0 && item < 10;
 });
 console.log(arr);
@@ -91,9 +91,10 @@ console.log(arrSquareSum);
 
 //  Дан массив с числами. Найдите среднее арифметическое его элементов (сумма элементов, делить на количество).
 arr = [1, 2, 3, 4];
-let average = arr.reduce((previous, current) => {
-	return previous + current;
-}, 0) / arr.length;
+let average =
+	arr.reduce((previous, current) => {
+		return previous + current;
+	}, 0) / arr.length;
 console.log(average);
 
 //  Выведите на экран первые 20 чисел Фибоначчи.

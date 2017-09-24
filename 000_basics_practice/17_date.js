@@ -8,13 +8,13 @@ console.log(today.getMonth());
 // 	Выведите на экран текущий год. Показать решение.
 console.log(today.getFullYear());
 // 	Выведите на экран текущую дату-время в формате '12:59:59 31.12.2014'. Для решения этой задачи напишите функцию, которая будет добавлять 0 перед днями и месяцами, которые состоят из одной цифры (из 1.9.2014 сделает 01.09.2014).
-function normalizeDigits (digits) {
+function normalizeDigits(digits) {
 	if (digits < 10) {
 		return '0' + digits;
 	}
 	return String(digits);
 }
-function getDateString (date) {
+function getDateString(today) {
 	const seconds = normalizeDigits(today.getSeconds());
 	const minutes = normalizeDigits(today.getMinutes());
 	const hours = normalizeDigits(today.getHours());
@@ -31,7 +31,7 @@ console.log(getDateString(Date()));
 console.log(today.getDay());
 
 //  Выведите на экран текущий день недели (словом, по-русски). Создайте для этого вспомогательную функцию, которая параметром принимает число, а возвращает день недели по-русски.
-function showDayString (day) {
+function showDayString(day) {
 	const days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
 	return days[day];
 }
@@ -57,27 +57,29 @@ const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate
 console.log(~~((today.getTime() - todayStart.getTime()) / 1000));
 
 // 	Создайте инпут, в который пользователь вводит дату своего рождения в формате '2014-12-31' (с конкретным годом). По потери фокуса выведите под инпутом сколько дней осталось до его дня рождения. Воспользуйтесь методом Date.parse.
-(function () {
+(function() {
 	const input = document.getElementById('birthDay');
 	const span = document.getElementById('days');
 	const example = document.getElementById('example');
 	function getActualBirthDay(date) {
 		const today = new Date();
 		const actualBirthDay = new Date(today.getFullYear(), date.getMonth(), date.getDate());
-		return (today - actualBirthDay < 0) ? actualBirthDay : new Date(today.getFullYear() + 1, date.getMonth(), date.getDate());
+		return today - actualBirthDay < 0
+			? actualBirthDay
+			: new Date(today.getFullYear() + 1, date.getMonth(), date.getDate());
 	}
 	function showremainningTime(dateString) {
 		const birthDate = new Date(Date.parse(dateString));
 		const actualBirthDay = getActualBirthDay(birthDate);
-		const daysDiff = Math.ceil(((actualBirthDay - new Date()) / 1000 / 60 / 60 / 24));
+		const daysDiff = Math.ceil((actualBirthDay - new Date()) / 1000 / 60 / 60 / 24);
 		return daysDiff === 365 ? 0 : daysDiff;
 	}
 
-	input.onchange = function (e) {
+	input.onchange = function(e) {
 		span.innerHTML = showremainningTime(e.target.value);
 	};
 
-	example.onclick = function () {
+	example.onclick = function() {
 		const benchBegin = Date.now();
 		input.value = '2014-05-06';
 		span.innerHTML = showremainningTime('2014-05-06');
@@ -87,9 +89,9 @@ console.log(~~((today.getTime() - todayStart.getTime()) / 1000));
 // TODO: добавить обработку исключения (високосный год)
 
 // Выведите на экран количество секунд, которое осталось до конца дня.
-(function () {
+(function() {
 	const span = document.getElementById('sec');
-	function calculateSeconds () {
+	function calculateSeconds() {
 		const today = new Date();
 		// console.log(today);
 		const endDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
@@ -98,10 +100,10 @@ console.log(~~((today.getTime() - todayStart.getTime()) / 1000));
 	}
 	calculateSeconds();
 	setInterval(calculateSeconds, 1000);
-})()
+})();
 
 // Создайте select, в который пользователь вводит день недели - например, вторник. По потери фокуса выведите под инпутом сколько дней осталось до ближайшего вторника.
-;(function () {
+(function() {
 	const select = document.getElementById('weekDays');
 	const today = document.getElementById('today');
 	const next = document.getElementById('next');
@@ -109,20 +111,17 @@ console.log(~~((today.getTime() - todayStart.getTime()) / 1000));
 	const days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
 	function calcRemaining(next, today) {
 		const subDays = next - today;
-		return (subDays > 0) ? subDays : subDays + 7; 
+		return subDays > 0 ? subDays : subDays + 7;
 	}
-	function calcMessage (day) {
+	function calcMessage(day) {
 		const selectDay = Number(day);
 		const currentDay = new Date().getDay();
 		today.innerHTML = days[currentDay];
 		next.innerHTML = days[selectDay];
 		value.innerHTML = calcRemaining(selectDay, currentDay);
 	}
-	select.onchange = function (e) {
+	select.onchange = function(e) {
 		calcMessage(e.target.value);
 	};
 	calcMessage(1);
-})()
-
-
-
+})();

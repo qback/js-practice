@@ -18,8 +18,8 @@ b = 5;
 let c;
 let x = 6;
 let y = 1;
-console.log(c = Math.abs(a - b));
-console.log(c = Math.abs(x - y));
+console.log((c = Math.abs(a - b)));
+console.log((c = Math.abs(x - y)));
 
 // Работа со степенью и корнем
 // Для решения задач данного блока вам понадобятся следующие методы: Math.pow, Math.sqrt.
@@ -41,11 +41,7 @@ console.log(Math.sqrt(coubSum));
 // Для решения задач данного блока вам понадобятся следующие функции: Math.round, Math.ceil, Math.floor, toFixed, toPrecision.
 //  Найдите квадратный корень из 379. Результат округлите до целых, до десятых, до сотых. Показать решение.
 a = Math.sqrt(379);
-console.log(
-	Math.round(a),
-	Number(a.toFixed(1)),
-	Number(a.toFixed(2))
-)
+console.log(Math.round(a), Number(a.toFixed(1)), Number(a.toFixed(2)));
 
 //  Найдите квадратный корень из 587. Округлите результат в большую и меньшую стороны, запишите результаты округления в объект с ключами 'floor' и 'ceil'. Показать решение.
 a = Math.sqrt(579);

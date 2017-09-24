@@ -2,7 +2,7 @@
 //  Выведите на экран таблицу умножения (как в школьной тетради).
 for (let index = 1; index < 10; index++) {
 	for (let i = 1; i < 10; i++) {
-		let value = (i * index);
+		let value = i * index;
 		value = value < 10 ? `0${value} ` : `${value} `;
 		document.write(value);
 	}

@@ -7,7 +7,7 @@ console.log(isNumberInRange(9));
 //  Дан массив с числами. Запишите в новый массив только те числа, которые больше нуля и меньше 10-ти. Для этого используйте вспомогательную функцию isNumberInRange из предыдущей задачи.
 let arr = [4, 56, -12, 0, 6];
 let arr1 = [];
-arr.map((item) => {
+arr.map(item => {
 	if (isNumberInRange(item)) {
 		arr1.push(item);
 	}
@@ -41,7 +41,7 @@ console.log(isEven(4));
 
 //  Дан массив с целыми числами. Создайте из него новый массив, где останутся лежать только четные из этих чисел. Для этого используйте вспомогательную функцию isEven из предыдущей задачи.
 arr = [4, 56, -12, 0, 6, 7, -11];
-let newArr = arr.filter((item) => {
+let newArr = arr.filter(item => {
 	return isEven(item);
 });
 console.log(newArr);
@@ -61,9 +61,9 @@ console.log(getDividers(15));
 //  Сделайте функцию, которая параметром принимает 2 числа, а возвращает массив их общих делителей. Для этого используйте вспомогательную функцию getDividers из предыдущей задачи.
 function getCommonDividers(first, second) {
 	const arrCommonDividers = [];
-	const firstArr = getDividers(first); 
+	const firstArr = getDividers(first);
 	const secondArr = getDividers(second);
-	firstArr.map((item) => {
+	firstArr.map(item => {
 		if (secondArr.includes(item)) {
 			arrCommonDividers.push(item);
 		}

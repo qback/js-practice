@@ -3,7 +3,10 @@ function ucfirst(str) {
 	return str.substr(0, 1).toUpperCase() + str.slice(1);
 }
 let str = 'заглавным первый символ';
-let newStr = str.split(' ').reduce((previous, current) => previous + ' ' + ucfirst(current), '').trim();
+let newStr = str
+	.split(' ')
+	.reduce((previous, current) => previous + ' ' + ucfirst(current), '')
+	.trim();
 console.log(newStr);
 
 //  Дана строка. Сделайте заглавным последний символ каждого слова этой строки.
@@ -11,7 +14,10 @@ function ucLast(str) {
 	return str.slice(0, -1) + str.slice(-1).toUpperCase();
 }
 str = 'заглавным последний символ';
-newStr = str.split(' ').reduce((previous, current) => previous + ' ' + ucLast(current), '').trim();
+newStr = str
+	.split(' ')
+	.reduce((previous, current) => previous + ' ' + ucLast(current), '')
+	.trim();
 console.log(newStr);
 
 //  Дана строка. Сделайте заглавным каждый четный символ этой строки.
@@ -52,7 +58,10 @@ console.log(str);
 
 //  Дана строка вида 'var_text_hello'. Сделайте из него текст 'varTextHello'.
 str = 'var_text_hello';
-newStr = str.split('_').map((item, index) => index > 0 ? ucfirst(item) : item).join('');
+newStr = str
+	.split('_')
+	.map((item, index) => (index > 0 ? ucfirst(item) : item))
+	.join('');
 console.log(newStr);
 
 //  Дана строка с пробелами по краям. Реализуйте функцию ltrim, которая будет убирать пробелы слева. Реализуйте функцию rtrim, которая будет убирать пробелы справа. Реализуйте функцию trim, которая будет убирать пробелы по концам строки.
@@ -63,13 +72,13 @@ function lTrim(str) {
 	}
 	return str;
 }
-function rTrim (str) {
+function rTrim(str) {
 	while (str.endsWith(' ')) {
 		str = str.slice(0, -1);
 	}
 	return str;
 }
-function trim (str) {
+function trim(str) {
 	return rTrim(lTrim(str));
 }
 newStr = trim(str);
@@ -87,7 +96,6 @@ function strReplace(arrOld, arrNew, string) {
 	return string;
 }
 console.log(strReplace(['ы', 'е'], ['и', 'и'], 'ЖЫлЕ богато жыле'));
-
 
 //  Сделайте функцию inArray, которая определяет, есть в массиве элемент с заданным текстом или нет. Функция первым параметром должна принимать текст элемента, а вторым - массив, в котором делается поиск. Функция должна возвращать true или false.
 function inArray(text, arr) {
@@ -116,7 +124,7 @@ function changeKeyValue(obj) {
 	}
 	return temp;
 }
-console.log(changeKeyValue({name: 'Oleg', size: 18}));
+console.log(changeKeyValue({ name: 'Oleg', size: 18 }));
 
 //  Сделайте функцию, которая принимает параметрами два массива и сливает их в объект так, что элементы первого массива становятся ключами, а второго - значениями.
 function marryArrays(firstArr, secondArr) {
@@ -176,12 +184,80 @@ console.log(toggleClass('menu active', 'open'));
 function isUpperCase(character) {
 	return character === character.toUpperCase();
 }
-const translitMe = (function () {
-	const cyr = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'];
-	const lat = ['a', 'b', 'v', 'g', 'd', 'e', 'yo', 'zh', 'z', 'i', 'y', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'f', 'kh', 'ts', 'ch', 'sh', 'sch', '', 'i', '', 'e', 'yu', 'ya'];
-	return function (str) {
+const translitMe = (function() {
+	const cyr = [
+		'а',
+		'б',
+		'в',
+		'г',
+		'д',
+		'е',
+		'ё',
+		'ж',
+		'з',
+		'и',
+		'й',
+		'к',
+		'л',
+		'м',
+		'н',
+		'о',
+		'п',
+		'р',
+		'с',
+		'т',
+		'у',
+		'ф',
+		'х',
+		'ц',
+		'ч',
+		'ш',
+		'щ',
+		'ъ',
+		'ы',
+		'ь',
+		'э',
+		'ю',
+		'я'
+	];
+	const lat = [
+		'a',
+		'b',
+		'v',
+		'g',
+		'd',
+		'e',
+		'yo',
+		'zh',
+		'z',
+		'i',
+		'y',
+		'k',
+		'l',
+		'm',
+		'n',
+		'o',
+		'p',
+		'r',
+		's',
+		't',
+		'u',
+		'f',
+		'kh',
+		'ts',
+		'ch',
+		'sh',
+		'sch',
+		'',
+		'i',
+		'',
+		'e',
+		'yu',
+		'ya'
+	];
+	return function(str) {
 		let strArray = str.split('');
-		strArray = strArray.map((item, index) => {
+		strArray = strArray.map(item => {
 			const lowerCaseItem = item.toLowerCase();
 			const upperCase = isUpperCase(item);
 			if (cyr.includes(lowerCaseItem)) {
@@ -197,17 +273,17 @@ console.log(translitMe('Ням-ням!! ВкуснЯшка!'));
 //  Сделайте функцию,  которая возвращает множественное или единственное число существительного. Пример: 1 яблоко, 2 (3, 4) яблока, 5 яблок. Функция первым параметром принимает число, а следующие 3 параметра — форма для единственного числа, для чисел два, три, четыре и для чисел, больших четырех, например, func(3, 'яблоко', 'яблока', 'яблок').
 function chooseEnding(num, ...endings) {
 	switch (num) {
-		case 1:
-			return `${num} ${endings[0]}`;
-		case 2:
-		case 3:
-		case 4:
-			return `${num} ${endings[1]}`;
-		default:
-			return `${num} ${endings[2]}`;
+	case 1:
+		return `${num} ${endings[0]}`;
+	case 2:
+	case 3:
+	case 4:
+		return `${num} ${endings[1]}`;
+	default:
+		return `${num} ${endings[2]}`;
 	}
 }
-console.log(chooseEnding(1, 'яблоко', 'яблока', 'яблок')); 
+console.log(chooseEnding(1, 'яблоко', 'яблока', 'яблок'));
 
 //  Дружественные числа - два различных числа, для которых сумма всех собственных делителей первого числа равна второму числу и наоборот, сумма всех собственных делителей второго числа равна первому числу.
 // Например, 220 и 284. Делители для 220 это 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 и 110, сумма делителей равна 284. Делители для 284 это 1, 2, 4, 71 и 142, их сумма равна 220.
@@ -241,7 +317,6 @@ function findAmicable(value) {
 	return temp;
 }
 // console.log(findAmicable(10000));
-
 
 //  Реализуйте функцию shuffle, которая перемешивает элементы массива в случайном порядке.
 // использование Math.round() даст неравномерное распределение!
@@ -279,23 +354,25 @@ function unique(arr) {
 	const temp = {};
 	const tempArr = [];
 	for (let item of arr) {
-		if (temp[item]) {continue;}
+		if (temp[item]) {
+			continue;
+		}
 		temp[item] = true;
 		tempArr.push(item);
 	}
 	return tempArr;
 }
-console.log(unique([1, 2, 3, 4, 3])); 
+console.log(unique([1, 2, 3, 4, 3]));
 
 //  Реализуйте функцию intersection, которая вернет массив из элементов, встречающихся в каждом из переданных массивов. Пример: intersection([1, 2, 3], [101, 2, 1, 10], [2, 1]) вернет [1, 2].
-function getIntersection (...metaArr) {
+function getIntersection(...metaArr) {
 	metaArr.sort((a, b) => a.length - b.length);
 	const testArr = metaArr.splice(0, 1)[0];
 	const mixedArr = metaArr.reduce((previous, current) => {
 		return previous.concat(current);
 	}, []);
 	const uniqueMixedArr = unique(mixedArr);
-	const resultArr = testArr.filter((item) => {
+	const resultArr = testArr.filter(item => {
 		return uniqueMixedArr.includes(item);
 	});
 	return resultArr;
@@ -303,7 +380,7 @@ function getIntersection (...metaArr) {
 console.log(getIntersection(['ляля', 1, 2, 3], [101, 2, 1, 10], [2, 1, 7]));
 
 //  Реализуйте функцию union, которая объединит уникальные элементы всех массивов, переданных ей параметром. Пример: union([1, 2, 3], [101, 2, 1, 10], [2, 1]) вернет [1, 2, 3, 101, 10].
-function getUnion (...metaArr) {
+function getUnion(...metaArr) {
 	const mixedArr = metaArr.reduce((previous, current) => {
 		return previous.concat(current);
 	}, []);
@@ -311,4 +388,3 @@ function getUnion (...metaArr) {
 	return uniqueMixedArr;
 }
 console.log(getUnion([1, 2, 3], [101, 2, 1, 10], [2, 1]));
-
