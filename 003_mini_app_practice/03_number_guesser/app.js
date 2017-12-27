@@ -1,7 +1,7 @@
 const gamebox = {
   min: 1,
   max: 6,
-  get correctNumber() {
+  getCorrectNumber() {
     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
   },
   attemptsLeft: 3,
@@ -13,6 +13,7 @@ const max = document.querySelector('.max-num');
 const message = document.querySelector('.message');
 const guessInput = document.querySelector('#guess');
 const guessBtn = document.querySelector('#guess-submit');
+let winningNumber = gamebox.getCorrectNumber();
 
 min.textContent = gamebox.min;
 max.textContent = gamebox.max;
@@ -27,12 +28,12 @@ guessBtn.addEventListener('click', ev => {
 
   if (isNaN(guess) || guess > gamebox.max || guess < gamebox.min) {
     showMessage(`Введите ЧИСЛО в промежутке от ${gamebox.min} до ${gamebox.max}`, 'red');
-  } else if (guess === gamebox.correctNumber) {
+  } else if (guess === winningNumber) {
     gameOver(true, `Опаньки!!! Вы победитель! ${guess} - правильный номер`);
   } else {
     gamebox.attemptsLeft -= 1;
     if (gamebox.attemptsLeft === 0) {
-      gameOver(false, `Вы проиграли. Правильный ответ: ${gamebox.correctNumber}`);
+      gameOver(false, `Вы проиграли. Правильный ответ: ${winningNumber}`);
     } else {
       showMessage(`${guess} - неправильный ответ. Осталось попыток: ${gamebox.attemptsLeft}`, 'red');
       guessInput.value = '';
@@ -57,6 +58,7 @@ function gameOver(result, msg) {
 function resetGame() {
   gamebox.isgameOver = false;
   gamebox.attemptsLeft = 3;
+  winningNumber = gamebox.getCorrectNumber();
   message.textContent = '';
   guessInput.style.borderColor = '';
   guessInput.disabled = false;
