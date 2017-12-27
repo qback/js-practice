@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Список книг</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <style>
+    .success,
+    .error {
+      color: white;
+      padding: 5px;
+      margin: 5px 0 15px;
+    }
+
+    .success {
+      background: green;
+    }
+
+    .error {
+      background: red;
+    }
+
+    .delete {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Добавить книгу</h1>
+    <form id="book-form">
+      <div>
+        <label for="title">Название</label>
+        <input type="text" name="title" id="title" class="u-full-width">
+      </div>
+      <div>
+        <label for="author">Автор</label>
+        <input type="text" name="author" id="author" class="u-full-width">
+      </div>
+      <div>
+        <label for="isbn">ISBN</label>
+        <input type="text" name="isbn" id="isbn" class="u-full-width">
+      </div>
+      <div>
+        <input type="submit" value="Добавить">
+      </div>
+    </form>
+    <table class="u-full-width">
+      <thead>
+        <th>Название</th>
+        <th>Автор</th>
+        <th>ISBN</th>
+        <th></th>
+      </thead>
+      <tbody id="book-list">
+
+      </tbody>
+    </table>
+  </div>
+  <!-- <script src="app.js"></script> -->
+  <script src="app-es6.js"></script>
+</body>
+
+</html>
