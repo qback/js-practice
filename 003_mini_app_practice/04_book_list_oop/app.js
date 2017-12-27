@@ -62,7 +62,6 @@ function addBook(ev) {
   ui.insertBookToList(newBook);
   ui.showAlert('Книга добавлена', 'success');
   ui.clearFields();
-  console.log('ui:', ui);
 }
 
 function removeBook({ target }) {
