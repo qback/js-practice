@@ -1,4 +1,4 @@
-todos = [
+const todos = [
   {
     text: 'Умыться',
     completed: true
@@ -18,7 +18,7 @@ todos = [
 ];
 
 const deleteTodo = (list, text) => {
-  const index = list.findIndex((item, index) => {
+  const index = list.findIndex(item => {
     return item.text.toLowerCase() === text.toLowerCase();
   });
   if (index !== -1) {
