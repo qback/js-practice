@@ -1,21 +1,9 @@
-const todos = [
-  {
-    text: 'Умыться',
-    completed: true
-  },
-  {
-    text: 'Побриться',
-    completed: false
-  },
-  {
-    text: 'Одеться',
-    completed: true
-  },
-  {
-    text: 'Позавтракать',
-    completed: false
-  }
-];
+let todos = [];
+
+const todosJSON = localStorage.getItem('todos');
+if (todosJSON !== null) {
+  todos = JSON.parse(todosJSON);
+}
 
 const filters = {
   searchText: '',
@@ -57,12 +45,16 @@ document.querySelector('#filter-note').addEventListener('input', ev => {
 
 document.querySelector('#create-note').addEventListener('submit', ev => {
   ev.preventDefault();
+
   const inputValue = ev.target.elements.addNote.value;
   if (inputValue.length === 0) return;
+
   todos.push({
     text: inputValue,
     completed: false
   });
+  localStorage.setItem('todos', JSON.stringify(todos));
+
   ev.target.elements.addNote.value = '';
   renderTodos(todos, filters);
 });
