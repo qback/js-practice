@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru, en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Приложение - Todo</title>
+</head>
+
+<body>
+  <h1>Что нужно сделать</h1>
+  <input type="text" id="filter-note" placeholder="Отфильтруй задачи" style="margin-top: 10px"><br>
+  <label>
+    <input type="checkbox" id="hide-completed" style="margin-top: 10px"> Скрыть завершенные задачи
+  </label><br>
+  <select id="sort-by">
+    <option value="byLastAdded">Сортировать по последнему созданному</option>
+    <option value="byRecentlyAdded">Сортировать по недавно созданному</option>
+    <option value="byAlphabet">Сортировать по алфавиту</option>
+  </select>
+  <div id="notes"></div>
+  <hr>
+  <form action="" id="create-note">
+    <input type="text" placeholder="Что нужно сделать?" name="addNote">
+    <button type="submit">Добавить задачу</button>
+  </form>
+  <script src="todos-app.js"></script>
+</body>
+
+</html>
