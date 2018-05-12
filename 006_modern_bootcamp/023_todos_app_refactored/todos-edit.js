@@ -6,7 +6,7 @@ let todoToEdit = todos.find(todo => {
   return todo.id === idToEdit;
 });
 
-if (todoToEdit === undefined) {
+if (!todoToEdit) {
   location.assign('/index.html');
 }
 
@@ -53,7 +53,7 @@ window.addEventListener('storage', ev => {
     todoToEdit = todos.find(todo => {
       return todo.id === idToEdit;
     });
-    if (todoToEdit === undefined) {
+    if (!todoToEdit) {
       location.assign('/index.html');
     }
     titleEl.value = todoToEdit.title;

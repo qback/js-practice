@@ -1,10 +1,7 @@
 /* global todos, filters, moment */
 function getSavedTodos() {
   const todosJSON = localStorage.getItem('todos');
-  if (todosJSON !== null) {
-    return JSON.parse(todosJSON);
-  }
-  return [];
+  return todosJSON ? JSON.parse(todosJSON) : [];
 }
 
 function saveTodos(todos) {
