@@ -1,4 +1,6 @@
+'use strict';
 /* global getSavedTodos, saveTodos, removeTodo, moment, generateTodoEditTime */
+
 const idToEdit = location.hash.substring(1);
 
 let todos = getSavedTodos();
