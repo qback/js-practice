@@ -1,12 +1,15 @@
 /*global getSavedTodos*/
 /*global saveTodos*/
 /*global renderTodos*/
+/*global uuidv4*/
+/*global moment*/
 
 let todos = getSavedTodos();
 
 const filters = {
   searchText: '',
-  hideCompleted: false
+  hideCompleted: false,
+  sortBy: 'created'
 };
 
 renderTodos(todos, filters);
@@ -19,17 +22,20 @@ document.querySelector('#filter-todo').addEventListener('input', ev => {
 document.querySelector('#create-note').addEventListener('submit', ev => {
   ev.preventDefault();
 
-  const inputValue = ev.target.elements.addNote.value;
-  if (inputValue.length === 0) return;
+  const id = uuidv4();
+  const timestamp = moment().valueOf();
 
   todos.push({
-    text: inputValue,
-    completed: false
+    id: id,
+    completed: false,
+    title: 'Новая задача',
+    body: '',
+    createdAt: timestamp,
+    updatedAt: timestamp
   });
-  saveTodos(todos);
 
-  ev.target.elements.addNote.value = '';
-  renderTodos(todos, filters);
+  saveTodos(todos);
+  location.assign(`/edit.html#${id}`);
 });
 
 document.querySelector('#hide-completed').addEventListener('change', () => {
@@ -38,5 +44,13 @@ document.querySelector('#hide-completed').addEventListener('change', () => {
 });
 
 document.querySelector('#sort-by').addEventListener('change', ev => {
-  console.log(ev.target.value);
+  filters.sortBy = ev.target.value;
+  renderTodos(todos, filters);
+});
+
+window.addEventListener('storage', ev => {
+  if (ev.key === 'todos') {
+    todos = JSON.parse(ev.newValue);
+    renderTodos(todos, filters);
+  }
 });
