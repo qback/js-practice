@@ -5,6 +5,8 @@ const Hangman = function(word, attempts) {
   this.attempts = attempts;
   this.guessedLetters = [];
   this.status = '';
+  this.charListener = this.listenKeyPress.bind(this);
+
   this.run();
 };
 
@@ -37,12 +39,14 @@ Hangman.prototype.makeGuess = function(letter) {
 };
 
 Hangman.prototype.startListener = function() {
-  window.addEventListener('keypress', ev => {
-    const guess = String.fromCharCode(ev.charCode);
-    this.makeGuess(guess);
-    this.renderDOM();
-    this.checkGameStatus();
-  });
+  window.addEventListener('keypress', this.charListener);
+};
+
+Hangman.prototype.listenKeyPress = function(ev) {
+  const guess = String.fromCharCode(ev.charCode);
+  this.makeGuess(guess);
+  this.renderDOM();
+  this.checkGameStatus();
 };
 
 Hangman.prototype.renderDOM = function() {
@@ -50,6 +54,7 @@ Hangman.prototype.renderDOM = function() {
   app.innerHTML = '';
 
   const puzzleEl = document.createElement('p');
+  puzzleEl.classList.add('status');
   puzzleEl.textContent = this.getPuzzle();
   app.appendChild(puzzleEl);
 
@@ -60,19 +65,13 @@ Hangman.prototype.renderDOM = function() {
 
 Hangman.prototype.checkGameStatus = function() {
   if (this.status === 'finished') {
-    this.gameSuccess();
+    document.querySelector('#app .status').textContent = `Вы выиграли. Правильное слово - ${this.word.join('')}`;
+    window.removeEventListener('keypress', this.charListener);
   }
   if (this.status === 'failed') {
-    this.gameOver();
+    document.querySelector('#app .status').textContent = `Вы проиграли. Правильное слово - ${this.word.join('')}`;
+    window.removeEventListener('keypress', this.charListener);
   }
-};
-
-Hangman.prototype.gameSuccess = function() {
-  console.log('Вы выиграли!');
-};
-
-Hangman.prototype.gameOver = function() {
-  console.log('Вы проиграли!');
 };
 
 Hangman.prototype.run = function() {
