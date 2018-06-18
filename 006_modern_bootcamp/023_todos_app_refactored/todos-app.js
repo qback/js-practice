@@ -36,7 +36,7 @@ document.querySelector('#create-note').addEventListener('submit', ev => {
   });
 
   saveTodos(todos);
-  location.assign(`/edit.html#${id}`);
+  location.assign(`edit.html#${id}`);
 });
 
 document.querySelector('#hide-completed').addEventListener('change', () => {

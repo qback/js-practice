@@ -48,7 +48,7 @@ function generateTodoDOM(todo) {
   todoEl.appendChild(input);
 
   a.textContent = todo.title;
-  a.href = `/edit.html#${todo.id}`;
+  a.href = `edit.html#${todo.id}`;
   todoEl.appendChild(a);
 
   button.textContent = 'x';

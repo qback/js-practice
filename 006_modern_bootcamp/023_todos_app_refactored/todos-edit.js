@@ -9,7 +9,7 @@ let todoToEdit = todos.find(todo => {
 });
 
 if (!todoToEdit) {
-  location.assign('/index.html');
+  location.assign('index.html');
 }
 
 const form = document.querySelector('#edit-todo');
@@ -23,7 +23,7 @@ editTimeInfo.textContent = generateTodoEditTime(todoToEdit.updatedAt);
 
 form.addEventListener('submit', ev => {
   ev.preventDefault();
-  location.assign('/index.html');
+  location.assign('index.html');
 });
 
 titleEl.addEventListener('input', ev => {
@@ -45,7 +45,7 @@ bodyEl.addEventListener('input', ev => {
 removeButton.addEventListener('click', () => {
   removeTodo(todoToEdit.id);
   saveTodos(todos);
-  location.assign('/index.html');
+  location.assign('index.html');
 });
 
 //синхронизация данных из local storage на разных страницах
@@ -56,7 +56,7 @@ window.addEventListener('storage', ev => {
       return todo.id === idToEdit;
     });
     if (!todoToEdit) {
-      location.assign('/index.html');
+      location.assign('index.html');
     }
     titleEl.value = todoToEdit.title;
     bodyEl.value = todoToEdit.body;
